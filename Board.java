@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 /*
- * Starter Code Written by @Author Vikash Sahu
+ * @Author Vikash Sahu
  */
 
-public class BoardStarter { //TODO: rename to "Board"
+public class BoardStarter { //TODO: rename to Board
 	private Position.Color currentPlayer;
 	private Position[][] board;
 
@@ -32,7 +32,6 @@ public class BoardStarter { //TODO: rename to "Board"
 		//TODO
 	}
 
-	@Override
 	public String toString() {
 		String colHeader = "  a b c d e f g h\n";
 
@@ -56,12 +55,7 @@ public class BoardStarter { //TODO: rename to "Board"
 		return s;
 	}
 
-	//TODO
 	public boolean isValidMove(Position.Color c, Position p) {
-
-	}
-
-	public ArrayList<Position> checkHorizontalLeft(Position startPosition) {
 		//TODO
 	}
 
@@ -69,19 +63,15 @@ public class BoardStarter { //TODO: rename to "Board"
 		//TODO
 	}
 
-	public ArrayList<Position> checkVerticalUp(Position startPosition) {
-		//TODO
-	}
-
 	public ArrayList<Position> checkVerticalDown(Position startPosition) {
 		//TODO
 	}
 
-	public ArrayList<Object> play(Position p) {
-		if (!isValidMove(p.getPiece(), p)) {
-			return new ArrayList<Object>();
-		}
+	public ArrayList<Position> checkDiagonalUpLeft(Position startPosition) {
+		//TODO
+	}
 
+	public ArrayList<Object> play(Position p) {
 		//TODO
 	}
 
@@ -89,30 +79,44 @@ public class BoardStarter { //TODO: rename to "Board"
 		//TODO
 	}
 
+  //Some code below has been written for you to do some basic testing.
+	//Make sure to write unit tests and pass the public test cases as well.
 	public static void main(String[] args) {
-		// contains some ideas for testing through the main method;
-		// you should also write some unit tests
 		Board b = new Board();
 		System.out.println(b);
 
-		Position p = new Position("f5", Position.Color.BLACK);
-		System.out.println(b.checkHorizontalLeft(p)); // should output [e5w]
+		//Horizontal Checks
+		System.out.println("Horizontal Right Check");
 
 		Position p2 = new Position("c4", Position.Color.BLACK);
-		System.out.println(b.checkHorizontalRight(p2)); // should output [d4w]
+		System.out.println("Should output: [d4W], and is: " + b.checkHorizontalRight(p2)); // should output [d4w]
 
-		Position p3 = new Position("e6", Position.Color.BLACK);
-		System.out.println(b.checkVerticalUp(p3)); // should output [e5w]
+		//Vertical Checks
+		System.out.println();
+		System.out.println("Vertical Down Check");
 
 		Position p4 = new Position("d3", Position.Color.BLACK);
-		System.out.println(b.checkVerticalDown(p4)); // should output [d4w]
+		System.out.println("Should output: [d4W], and is: " + b.checkVerticalDown(p4)); // should output [d4w]
 
 		//Test play()
-		System.out.println(b.play(p)); // should output: [f5B, [e5W]]
+		System.out.println();
+		System.out.println("play() checks");
+		System.out.println("Should output: [c4B, [d4W]], and is: " + b.play(p2));
 		System.out.println(b);
 
-		Position p5 = new Position("d6", Position.Color.WHITE);
-		System.out.println(b.play(p5)); // should output: [d6W, [d5B]]
+		Position p5 = new Position("e3", Position.Color.WHITE);
+		System.out.println("Should output: [e3W, [e4B]], and is: " + b.play(p5));
+		System.out.println(b);
+
+		//Diagonal Checks
+		System.out.println("Diagonal Up Left Check");
+
+		Position p9 = new Position("f6", Position.Color.BLACK);
+		System.out.println("Should output: [e5W], and is: " + b.checkDiagonalUpLeft(p9));
+
+		System.out.println();
+		System.out.println("diagonal play() check");
+		System.out.println("Should output: [f6B, [e5W]], and is: " + b.play(p9));
 		System.out.println(b);
 	}
 }
