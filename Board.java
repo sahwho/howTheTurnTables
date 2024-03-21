@@ -55,7 +55,7 @@ public class BoardStarter { //TODO: rename to Board
 		return s;
 	}
 
-	public boolean isValidMove(Position.Color c, Position p) {
+	public boolean isValidMove(Position p) {
 		//TODO
 	}
 
