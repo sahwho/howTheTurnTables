@@ -7,68 +7,59 @@ import org.junit.Test;
 public class BoardPublicTests {
 
 	@Test
-	//0.5 Points
-	public void testConstructorCurrentPlayerHalfPoint() {
+	public void testConstructorCurrentPlayer() {
 		Board b = new Board();
 		assertEquals(Position.Color.BLACK, b.getCurrentPlayer());
 	}
 
 	@Test
-	//0.5 Points
-	public void testConstructorCountColorPiecesBlackHalfPoint() {
+	public void testConstructorCountColorPiecesBlack() {
 		Board b = new Board();
 		assertEquals(2, b.countColorPieces(Position.Color.BLACK));
 	}
 
 	@Test
-	//0.5 Points
-	public void testConstructorCountColorPiecesWhiteHalfPoint() {
+	public void testConstructorCountColorPiecesWhite() {
 		Board b = new Board();
 		assertEquals(2, b.countColorPieces(Position.Color.WHITE));
 	}
 
 	@Test
-	//0.5 Points
-	public void testConstructorCountColorPiecesEmptyHalfPoint() {
+	public void testConstructorCountColorPiecesEmpty() {
 		Board b = new Board();
 		assertEquals(60, b.countColorPieces(Position.Color.EMPTY));
 	}
 
 	@Test
-	//0.5 Point
-	public void testConstructorBlackPieceE4HalfPoint() {
+	public void testConstructorBlackPieceE4() {
 		Board b = new Board();
 		Position[][] board = b.getBoard();
 		assertEquals(new Position("e4", Position.Color.BLACK), board[3][4]);
 	}
 
 	@Test
-	//0.5 Point
-	public void testConstructorBlackPieceD5HalfPoint() {
+	public void testConstructorBlackPieceD5() {
 		Board b = new Board();
 		Position[][] board = b.getBoard();
 		assertEquals(new Position("d5", Position.Color.BLACK), board[4][3]);
 	}
 
 	@Test
-	//0.5 Point
-	public void testConstructorWhitePieceD4HalfPoint() {
+	public void testConstructorWhitePieceD4() {
 		Board b = new Board();
 		Position[][] board = b.getBoard();
 		assertEquals(new Position("d4", Position.Color.WHITE), board[3][3]);
 	}
 
 	@Test
-	//0.5 Point
-	public void testConstructorWhitePieceE5HalfPoint() {
+	public void testConstructorWhitePieceE5() {
 		Board b = new Board();
 		Position[][] board = b.getBoard();
 		assertEquals(new Position("e5", Position.Color.WHITE), board[4][4]);
 	}
 
 	@Test
-	//0.5 Points
-	public void testPiecesHaveSameColorHalfPoint() {
+	public void testPiecesHaveSameColor() {
 		ArrayList<Position> pieces = new ArrayList<Position>();
 		pieces.add(new Position("d4", Position.Color.BLACK));
 		pieces.add(new Position("d5", Position.Color.BLACK));
@@ -76,8 +67,7 @@ public class BoardPublicTests {
 	}
 
 	@Test
-	//0.5 Points
-	public void testPiecesHaveSameColor2HalfPoint() {
+	public void testPiecesHaveSameColor2() {
 		ArrayList<Position> pieces = new ArrayList<Position>();
 		pieces.add(new Position("d4", Position.Color.BLACK));
 		pieces.add(new Position("d5", Position.Color.WHITE));
@@ -85,8 +75,7 @@ public class BoardPublicTests {
 	}
 
 	@Test
-	//0.5 Points
-	public void testPiecesHaveSameColor3HalfPoint() {
+	public void testPiecesHaveSameColor3() {
 		ArrayList<Position> pieces = new ArrayList<Position>();
 		pieces.add(new Position("c4", Position.Color.BLACK));
 		pieces.add(new Position("d4", Position.Color.BLACK));
@@ -96,22 +85,19 @@ public class BoardPublicTests {
 	}
 
 	@Test
-	//0.5 Points
-	public void testPiecesHaveSameColor4HalfPoint() {
+	public void testPiecesHaveSameColor4() {
 		ArrayList<Position> pieces = new ArrayList<Position>();
 		pieces.add(new Position("d4", Position.Color.BLACK));
 		assertTrue(Board.piecesHaveSameColor(pieces));
 	}
 
 	@Test
-	//1 Point
-	public void testDetermineWinnerEmpty1Point() {
+	public void testDetermineWinnerEmpty1() {
 		Board b = new Board();
 		assertEquals(Position.Color.EMPTY, b.determineWinner());
 	}
 
 	@Test
-	//1 Point
 	public void testDetermineWinnerBlack1Point() {
 		Board b = new Board();
 		b.play(new Position("c4", Position.Color.BLACK));
@@ -119,7 +105,6 @@ public class BoardPublicTests {
 	}
 
 	@Test
-	//1 point
 	public void testDetermineWinnerWhite1Point() {
 		Board b = new Board();
 		b.play(new Position("c4", Position.Color.BLACK));
@@ -251,32 +236,28 @@ public class BoardPublicTests {
 	}
 
 	@Test
-	//0.5 Points
-	public void testIsValidMove1HalfPoint() {
+	public void testIsValidMove1() {
 		Board b = new Board();
 		Position p = new Position("c4", Position.Color.BLACK);
 		assertTrue(b.isValidMove(p));
 	}
 
 	@Test
-	//0.5 Points
-	public void testIsValidMove2HalfPoint() {
+	public void testIsValidMove2() {
 		Board b = new Board();
 		Position p = new Position("c4", Position.Color.WHITE);
 		assertFalse(b.isValidMove(p));
 	}
 
 	@Test
-	//0.5 Points
-	public void testIsValidMove3HalfPoint() {
+	public void testIsValidMove3() {
 		Board b = new Board();
 		Position p = new Position("q2", Position.Color.WHITE);
 		assertFalse(b.isValidMove(p));
 	}
 
 	@Test
-	//0.5 Points
-	public void testIsValidMove4HalfPoint() {
+	public void testIsValidMove4() {
 		Board b = new Board();
 		Position p = new Position("c4", Position.Color.BLACK);
 		assertTrue(b.isValidMove(p));
@@ -320,8 +301,7 @@ public class BoardPublicTests {
 	}
 
 	@Test
-	//0.5 Point
-	public void testPlayInvalidMoveNotCurrentPlayerHalfPoint() {
+	public void testPlayInvalidMoveNotCurrentPlayer() {
 		Board b = new Board();
 		Position p = new Position("c5", Position.Color.WHITE);
 
@@ -335,8 +315,7 @@ public class BoardPublicTests {
 	}
 
 	@Test
-	//0.5 Point
-	public void testPlayInvalidMoveAlreadyFullHalfPoint() {
+	public void testPlayInvalidMoveAlreadyFull() {
 		Board b = new Board();
 		Position p = new Position("d4", Position.Color.BLACK);
 
