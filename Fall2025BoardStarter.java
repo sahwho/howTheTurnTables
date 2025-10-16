@@ -67,17 +67,17 @@ public class Fall2025BoardStarter { //TODO: rename to Board
 		return false; 
 	}
 
-	public Piece[] checkHorizontalRight(Piece startPosition) {
+	public Piece[] checkHorizontalRight(Piece potentialMove) {
 		// TODO
 		return null;
 	}
 
-	public Piece[] checkVerticalDown(Piece startPosition) {
+	public Piece[] checkVerticalDown(Piece potentialMove) {
 		// TODO
 		return null;
 	}
 
-	public Piece[] checkDiagonalUpLeft(Piece startPosition) {
+	public Piece[] checkDiagonalUpLeft(Piece potentialMove) {
 		// TODO
 		return null;
 	}
