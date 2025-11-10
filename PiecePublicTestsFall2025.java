@@ -103,15 +103,13 @@ public class PiecePublicTestsFall2025 {
 	public void testCompareTo4() {
 		Piece p = new Piece("c3", Piece.Color.BLACK);
 		Piece p2 = new Piece("d4", Piece.Color.WHITE);
-		assertEquals(-1, p.compareTo(p2));
+		assertEquals(-9, p.compareTo(p2));
 	}
 	
 	@Test
 	public void testCompareTo5() {
 		Piece p = new Piece("C7", Piece.Color.BLACK);
 		Piece p2 = new Piece("D4", Piece.Color.WHITE);
-		assertEquals(3, p.compareTo(p2));
-	}
-	
-	*/
+		assertEquals(23, p.compareTo(p2));
+	}*/
 }
