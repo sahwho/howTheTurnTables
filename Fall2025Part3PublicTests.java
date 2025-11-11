@@ -1,4 +1,3 @@
-
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
@@ -437,8 +436,9 @@ public class Fall2025Part3PublicTests {
 		assertEquals(0, b.checkDiagonalUpLeft(p4).size());
 		assertEquals(0, b.checkVerticalDown(p4).size());
 		assertEquals(2, piecesToCapture.size());
-		assertEquals("c4B", piecesToCapture.get(0).toString());
-		assertEquals("d4B", piecesToCapture.get(1).toString());
+		// a properly overridden equals method is needed for the comparisons below
+		assertEquals(new Piece("c4", Piece.Color.BLACK), piecesToCapture.get(0));
+		assertEquals(new Piece("d4", Piece.Color.BLACK), piecesToCapture.get(1));
 
 		assertEquals(Piece.Color.WHITE, b.getCurrentPlayer());
 
@@ -466,8 +466,9 @@ public class Fall2025Part3PublicTests {
 		assertEquals(0, b.checkHorizontalRight(p5).size());
 		assertEquals(0, b.checkDiagonalUpLeft(p5).size());
 		assertEquals(2, piecesToCapture.size());
-		assertEquals("e3W", piecesToCapture.get(0).toString());
-		assertEquals("e4W", piecesToCapture.get(1).toString());
+		// a properly overridden equals method is needed for the comparisons below
+		assertEquals(new Piece("e3", Piece.Color.WHITE), piecesToCapture.get(0));
+		assertEquals(new Piece("e4", Piece.Color.WHITE), piecesToCapture.get(1));
 
 		assertEquals(Piece.Color.BLACK, b.getCurrentPlayer());
 
@@ -496,8 +497,9 @@ public class Fall2025Part3PublicTests {
 		//check that other direction checks are empty
 		assertEquals(0, b.checkHorizontalRight(p6).size());
 		assertEquals(0, b.checkVerticalDown(p6).size());
-		assertEquals("e5B", piecesToCapture.get(0).toString());
-		assertEquals("f6B", piecesToCapture.get(1).toString());
+		// a properly overridden equals method is needed for the comparisons below
+		assertEquals(new Piece("e5", Piece.Color.BLACK), piecesToCapture.get(0));
+		assertEquals(new Piece("f6", Piece.Color.BLACK), piecesToCapture.get(1));
 
 		assertEquals(Piece.Color.WHITE, b.getCurrentPlayer());
 
@@ -530,10 +532,10 @@ public class Fall2025Part3PublicTests {
 		//check that other direction checks are empty
 		assertEquals(0, b.checkDiagonalUpLeft(p7).size());
 		assertEquals(0, b.checkVerticalDown(p7).size());
-
-		assertEquals("b4W", piecesToCapture.get(0).toString());
-		assertEquals("c4W", piecesToCapture.get(1).toString());
-		assertEquals("d4W", piecesToCapture.get(2).toString());
+		// a properly overridden equals method is needed for the comparisons below
+		assertEquals(new Piece("b4", Piece.Color.WHITE), piecesToCapture.get(0));
+		assertEquals(new Piece("c4", Piece.Color.WHITE), piecesToCapture.get(1));
+		assertEquals(new Piece("d4", Piece.Color.WHITE), piecesToCapture.get(2));
 
 		b.play(p7);
 
@@ -560,12 +562,13 @@ public class Fall2025Part3PublicTests {
 		Piece p8 = new Piece("e1", Piece.Color.WHITE);
 		piecesToCapture = b.checkVerticalDown(p8);
 		assertEquals(3, piecesToCapture.size());
-		//check that other direction checks are empty
+		// check that other direction checks are empty
 		assertEquals(0, b.checkHorizontalRight(p8).size());
 		assertEquals(0, b.checkDiagonalUpLeft(p8).size());
-		assertEquals("e2B", piecesToCapture.get(0).toString());
-		assertEquals("e3B", piecesToCapture.get(1).toString());
-		assertEquals("e4B", piecesToCapture.get(2).toString());
+		// a properly overridden equals method is needed for the comparisons below
+		assertEquals(new Piece("e2", Piece.Color.BLACK), piecesToCapture.get(0));
+		assertEquals(new Piece("e3", Piece.Color.BLACK), piecesToCapture.get(1));
+		assertEquals(new Piece("e4", Piece.Color.BLACK), piecesToCapture.get(2));
 
 		assertEquals(Piece.Color.WHITE, b.getCurrentPlayer());
 
@@ -596,11 +599,13 @@ public class Fall2025Part3PublicTests {
 		Piece p9 = new Piece("h8", Piece.Color.BLACK);
 		piecesToCapture = b.checkDiagonalUpLeft(p9);
 		assertEquals(3, piecesToCapture.size());
-		//check that other direction checks are empty
+		// check that other direction checks are empty
 		assertEquals(0, b.checkHorizontalRight(p9).size());
 		assertEquals(0, b.checkVerticalDown(p9).size());
-		assertEquals("e5W", piecesToCapture.get(0).toString());
-		assertEquals("f6W", piecesToCapture.get(1).toString());
-		assertEquals("g7W", piecesToCapture.get(2).toString());	
+		
+		// a properly overridden equals method is needed for the comparisons below
+		assertEquals(new Piece("e5", Piece.Color.WHITE), piecesToCapture.get(0));
+		assertEquals(new Piece("f6", Piece.Color.WHITE), piecesToCapture.get(1));
+		assertEquals(new Piece("g7", Piece.Color.WHITE), piecesToCapture.get(2));	
 	}
 }
