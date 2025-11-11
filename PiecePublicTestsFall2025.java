@@ -1,3 +1,5 @@
+package ArrayListRefactor;
+
 import static org.junit.Assert.*;
 
 import java.util.Arrays;
@@ -78,18 +80,18 @@ public class PiecePublicTestsFall2025 {
 	 * you choose to take on the optional extension.
 	 */
 
-	/*@Test
+	@Test
 	public void testCompareTo1() {
 		Piece p = new Piece("d5", Piece.Color.WHITE);
 		Piece p2 = new Piece("a5", Piece.Color.BLACK);
-		assertEquals(3, p.compareTo(p2));
+		assertTrue(p.compareTo(p2) > 0);
 	}
 	
 	@Test
 	public void testCompareTo2() {
 		Piece p = new Piece("d5", Piece.Color.WHITE);
 		Piece p2 = new Piece("a5", Piece.Color.BLACK);
-		assertEquals(-3, p2.compareTo(p));
+		assertTrue(p2.compareTo(p) < 0);
 	}
 	
 	@Test
@@ -103,13 +105,13 @@ public class PiecePublicTestsFall2025 {
 	public void testCompareTo4() {
 		Piece p = new Piece("c3", Piece.Color.BLACK);
 		Piece p2 = new Piece("d4", Piece.Color.WHITE);
-		assertEquals(-9, p.compareTo(p2));
+		assertTrue(p.compareTo(p2) < 0);
 	}
 	
 	@Test
 	public void testCompareTo5() {
 		Piece p = new Piece("C7", Piece.Color.BLACK);
 		Piece p2 = new Piece("D4", Piece.Color.WHITE);
-		assertEquals(23, p.compareTo(p2));
-	}*/
+		assertTrue(p.compareTo(p2) > 0);
+	}
 }
